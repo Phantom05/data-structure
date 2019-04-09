@@ -16,7 +16,7 @@ function binarySearch(x, a) {
   }
   return null;
 }
-
+-
 function getLinearSearch(x, arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == x) return i
@@ -29,36 +29,36 @@ for (let i = 0; i < 50000; i++) { // 천만데이터
   primas.push(i)
 }
 
-setTimeout(() => {
-  let t0 = performance.now();
-  binarySearch(10000, primas)
-  let t1 = performance.now();
-  console.log("binarySearch: " + (t1 - t0) + 'ms')
-  //숫자가 커질수록 속도가 월등히 빨라짐. 최대 20배까지 빠른 상황 확인.
-  //반대로 숫자가 적을떈 Linear와 비슷하거나 미세하게 느림.
-  //힘이 닿는다면 무조건 이진트리 자료구조를 사용하는것이 좋은듯.
-}, 0);
+// setTimeout(() => {
+//   let t0 = performance.now();
+//   binarySearch(10000, primas)
+//   let t1 = performance.now();
+//   console.log("binarySearch: " + (t1 - t0) + 'ms')
+//   //숫자가 커질수록 속도가 월등히 빨라짐. 최대 20배까지 빠른 상황 확인.
+//   //반대로 숫자가 적을떈 Linear와 비슷하거나 미세하게 느림.
+//   //힘이 닿는다면 무조건 이진트리 자료구조를 사용하는것이 좋은듯.
+// }, 0);
 
-setTimeout(() => {
-  let t2 = performance.now();
-  getLinearSearch(10000, primas)
-  let t3 = performance.now();
-  console.log("getLinearSearch: " + (t3 - t2) + 'ms')
-}, 0);
+// setTimeout(() => {
+//   let t2 = performance.now();
+//   getLinearSearch(10000, primas)
+//   let t3 = performance.now();
+//   console.log("getLinearSearch: " + (t3 - t2) + 'ms')
+// }, 0);
 
 
-function f1(n,t){
-  for(; n--;) {
-    if(n==1) console.log('done',t)
-  }
-}
-setTimeout(() => {
-  f1(20020,'t1');
-}, 0);
+// function f1(n,t){
+//   for(; n--;) {
+//     if(n==1) console.log('done',t)
+//   }
+// }
+// setTimeout(() => {
+//   f1(20020,'t1');
+// }, 0);
 
-setTimeout(() => {
-  f1(100,'t2')
-}, 0);
+// setTimeout(() => {
+//   f1(100,'t2')
+// }, 0);
 
 
 // var a = [2, 4, 51, 7, 12, 15, 21, 34, 35, 46, 57, 70, 82, 86, 92, 99];
@@ -116,13 +116,12 @@ function getBinarySearch(x, arr) {
   let min = 0;
   let max = arr.length - 1;
 
-  while (min < max) {
+  while (min <= max) {
     console.group('반복문 min :', min, 'max : ', max)
     let guess = Math.floor((min + max) / 2);
     console.log('guess middle index: ', guess, 'value :', arr[guess])
-    if (arr[guess] == x) return `res : ${guess}`;
-
-    if (arr[guess] <= x) {
+    if (arr[guess] == x) return `result : ${guess}`;
+    if (arr[guess] < x) {
       min = guess + 1;
       console.log('x가 더 큼 앞을 줄여라 min: ', min)
     } else {
@@ -131,7 +130,7 @@ function getBinarySearch(x, arr) {
     }
     console.groupEnd()
   }
-  return null
+  return `result : ${null}`
 }
 
 // 인덱스반환

@@ -28,3 +28,35 @@ function quicksort(x, first, last) {
 var a = [7, 2, 5, 1, 8, 9, 3];
 quicksort(a, 0, a.length-1);// 시작하는 인덱스와 끝 인덱스를 넣는다.
 console.log(a)
+
+function isToday(date) {
+  var today = new Date();
+  var realToday = today.getDate();
+  var realDate = date.getDate();
+  return (realDate == realToday)? true:false
+}
+
+
+function bb(){
+  bb.prototype.a = 'h'
+  return `hello ${this}`
+}
+
+let a1 = new bb();
+let a2 = new bb();
+console.log(a1.a == a2.a);
+console.log(a1)
+
+
+
+let t1 = new Date();
+let t2 = new Date();
+
+console.log(t1.getTime() == t2.getTime())
+
+
+
+ isToday= (date)=> date.toDateString() == new Date().toDateString();
+
+
+console.log(isToday(new Date()))

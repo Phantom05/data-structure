@@ -28,7 +28,7 @@ function quicksort(x, first, last) {
 var a = [7, 2, 5, 1, 8, 9, 3];
 quicksort(a, 0, a.length-1);// 시작하는 인덱스와 끝 인덱스를 넣는다.
 console.log(a)
-
+--
 function isToday(date) {
   var today = new Date();
   var realToday = today.getDate();

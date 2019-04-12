@@ -14,9 +14,7 @@
 
  
 var insertionSort = function(array) {
-  var temp; 
-  let j;
-  for (let i = 1 ; i < array.length; i++) {
+  for (let i = 1,j,temp ; i < array.length; i++) {
     temp = array[i]; // 새로운 숫자를 선택함
     for (j = i - 1; j >= 0 && temp < array[j]; j--) { 
       // 선택한 숫자를 이미 정렬된 숫자들과 비교하며 넣을 위치를 찾는 과정, 선택한 숫자가 정렬된 숫자보다 작으면
@@ -29,3 +27,9 @@ var insertionSort = function(array) {
 console.log(
   insertionSort([5, 6, 1, 2, 4, 3])
 ); // [1, 2, 3, 4, 5, 6]
+
+
+
+/**
+ * 
+ */
